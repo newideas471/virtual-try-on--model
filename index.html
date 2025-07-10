@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clothing Try-On 360° Viewer</title>
+  <style>
+    body { margin: 0; overflow: hidden; font-family: sans-serif; }
+    #canvas-container { width: 100vw; height: 100vh; }
+    #videoElement, #uploadedImage {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 200px;
+      border: 2px solid #fff;
+      z-index: 10;
+      display: none;
+    }
+    #menu {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: white;
+      padding: 10px;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <video autoplay id="videoElement"></video>
+  <img id="uploadedImage" />
+  <div id="canvas-container"></div>
+  <div id="menu">
+    <label for="clothes">Choose a clothing:</label>
+    <select id="clothes">
+      <option value="tshirt">T-Shirt</option>
+      <option value="hoodie">Hoodie</option>
+    </select><br><br>
+    <input type="file" accept="image/*" id="photoUpload" /><br><br>
+    <button id="screenshotBtn">📸 Screenshot</button>
+  </div>
